@@ -1,4 +1,4 @@
-import { HashMap } from '@/shared/types/Hashmap';
+import { HashMap } from '@/shared/types/HashMap';
 import Button from './ui/Buttons/Button';
 import Text from './ui/Typography/Text';
 
