@@ -17,7 +17,7 @@ export default function MobileNavbar() {
 					transform="uppercase"
 					className="lg:text-2xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 pr-1"
 				>
-					Runechain
+					Leadchain
 				</Text>
 			</LinkButton>
 

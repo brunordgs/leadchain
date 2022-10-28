@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>RuneChain</title>
+				<title>LeadChain</title>
 			</Head>
 
 			<main className="grid grid-cols-8 p-6 gap-[1px]">

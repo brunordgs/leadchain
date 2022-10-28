@@ -17,7 +17,7 @@ export default function Navbar() {
 						transform="uppercase"
 						className="font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 pr-1"
 					>
-						Runechain
+						Leadchain
 					</Text>
 				</LinkButton>
 

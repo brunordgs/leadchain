@@ -1,4 +1,4 @@
-import { HashMap } from '@/shared/types/Hashmap';
+import { HashMap } from '@/shared/types/HashMap';
 
 interface Props {
 	tableHeaders: string[];
