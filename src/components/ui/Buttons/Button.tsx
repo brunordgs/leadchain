@@ -22,8 +22,17 @@ export const BUTTON_COLORS = {
 			outlined: '',
 		},
 	},
+	secondary: {
+		base: 'bg-white from-purple-500 to-blue-500 text-slate-100 hover:text-white border border-indigo-500 rounded-sm shadow-md',
+		outlined:
+			'text-slate-700 hover:text-black border border-slate-200 rounded-sm shadow-sm',
+		disabled: {
+			base: 'bg-zinc-400/40 text-zinc-400 border border-transparent cursor-not-allowed rounded-md shadow-md',
+			outlined: '',
+		},
+	},
 	success: {
-		base: 'bg-teal-600  text-zinc-100 hover:text-white border border-teal-600 rounded-md shadow-md',
+		base: 'bg-teal-600 text-zinc-100 hover:text-white border border-teal-600 rounded-md shadow-md',
 		outlined: '',
 		disabled: {
 			base: '',
