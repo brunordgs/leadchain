@@ -1,12 +1,33 @@
+import { walletAtom } from '@/states/atoms/walletAtom';
+import { getWalletAddress } from '@/utils/wallet';
+import { useEffect } from 'react';
 import { AiOutlineAreaChart, AiOutlineSwap } from 'react-icons/ai';
 import { HiSquares2X2 } from 'react-icons/hi2';
 import { IoServer } from 'react-icons/io5';
+import { useRecoilState } from 'recoil';
 import ConnectWalletDialog from '../Dialogs/ConnectWalletDialog';
+import Button from '../ui/Buttons/Button';
 import LinkButton from '../ui/Buttons/LinkButton';
 import Text from '../ui/Typography/Text';
 import MobileNavbar from './MobileNavbar';
 
 export default function Navbar() {
+	const [wallet, setWallet] = useRecoilState(walletAtom);
+
+	useEffect(() => {
+		async function setCurrenctConnectedWallet() {
+			setWallet({
+				...wallet,
+				walletContractAddress: await getWalletAddress(wallet),
+			});
+		}
+
+		console.log('hey')
+		if (wallet?.isConnected) {
+			setCurrenctConnectedWallet();
+		}
+	}, [wallet]);
+
 	return (
 		<>
 			<header className="px-12 py-5 sticky top-0 border-b bg-white hidden xl:flex items-center">
@@ -63,7 +84,14 @@ export default function Navbar() {
 						<option value="eth">Ethereum</option>
 					</select>
 
-					<ConnectWalletDialog />
+					{wallet?.isConnected ? (
+						<Button>
+							{wallet.walletContractAddress?.slice(0, 8)}...
+							{wallet.walletContractAddress?.slice(-2)}
+						</Button>
+					) : (
+						<ConnectWalletDialog />
+					)}
 				</div>
 			</header>
 

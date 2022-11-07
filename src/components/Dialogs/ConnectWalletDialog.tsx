@@ -105,7 +105,12 @@ export default function ConnectWalletDialog() {
 															const connectedWallet = await enableWallet(wallet.selectedWallet);
 
 															if (connectedWallet) {
-																setWallet({ ...wallet, ...connectedWallet, isConnected: true });
+																setWallet({
+																	...wallet,
+																	...connectedWallet,
+																	...window.cardano[wallet.selectedWallet],
+																	isConnected: true,
+																});
 																setIsOpen(false);
 															}
 														} catch (e) {
