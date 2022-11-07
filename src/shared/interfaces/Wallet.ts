@@ -1,7 +1,7 @@
 export interface Wallet {
 	name: string;
 	icon: string;
-	walletContractAddress: string;
+	stakeAddress: string;
 	isConnected: boolean;
 	selectedWallet: string;
 	// walletFound: boolean;

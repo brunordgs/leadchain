@@ -6,7 +6,7 @@ import { HiSquares2X2 } from 'react-icons/hi2';
 import { IoServer } from 'react-icons/io5';
 import { useRecoilState } from 'recoil';
 import ConnectWalletDialog from '../Dialogs/ConnectWalletDialog';
-import Button from '../ui/Buttons/Button';
+import ConnectedWalletDropdown from '../Dropdowns/ConnectedWalletDropdown';
 import LinkButton from '../ui/Buttons/LinkButton';
 import Text from '../ui/Typography/Text';
 import MobileNavbar from './MobileNavbar';
@@ -18,11 +18,10 @@ export default function Navbar() {
 		async function setCurrenctConnectedWallet() {
 			setWallet({
 				...wallet,
-				walletContractAddress: await getWalletAddress(wallet),
+				stakeAddress: await getWalletAddress(wallet),
 			});
 		}
 
-		console.log('hey')
 		if (wallet?.isConnected) {
 			setCurrenctConnectedWallet();
 		}
@@ -30,7 +29,7 @@ export default function Navbar() {
 
 	return (
 		<>
-			<header className="px-12 py-5 sticky top-0 border-b bg-white hidden xl:flex items-center">
+			<header className="px-12 py-5 sticky top-0 border-b bg-white hidden xl:flex items-center z-10">
 				<LinkButton href="/" color="unstyled" className="text-slate-700 hover:text-black">
 					<Text
 						as="span"
@@ -85,10 +84,7 @@ export default function Navbar() {
 					</select>
 
 					{wallet?.isConnected ? (
-						<Button>
-							{wallet.walletContractAddress?.slice(0, 8)}...
-							{wallet.walletContractAddress?.slice(-2)}
-						</Button>
+						<ConnectedWalletDropdown connectedWallet={wallet} onConnectedWallet={setWallet} />
 					) : (
 						<ConnectWalletDialog />
 					)}

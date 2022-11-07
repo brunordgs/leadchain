@@ -30,18 +30,18 @@ export async function enableWallet(selectedWallet: string) {
 }
 
 export async function getWalletAddress(connectedWallet: any) {
-	let walletContractAddress = connectedWallet.walletContractAddress;
+	let stakeAddress = connectedWallet.stakeAddress;
 
 	// Typhon wallet is quite different from other wallets, it already has correct address by default
 	if (connectedWallet.selectedWallet === 'typhon') {
-		const walletAddress = walletContractAddress ?? (await connectedWallet.getAddress());
+		const walletAddress = stakeAddress ?? (await connectedWallet.getAddress());
 		return walletAddress.data;
 	}
 
-	const walletAddress = walletContractAddress ?? (await connectedWallet.getChangeAddress());
-	walletContractAddress = wasm.Address.from_bytes(hexToBytes(walletAddress) as any).to_bech32();
+	const walletAddress = stakeAddress ?? (await connectedWallet.getChangeAddress());
+	stakeAddress = wasm.Address.from_bytes(hexToBytes(walletAddress) as any).to_bech32();
 
-	return walletContractAddress;
+	return stakeAddress;
 }
 
 export async function getNetworkId(selectedWallet: string) {

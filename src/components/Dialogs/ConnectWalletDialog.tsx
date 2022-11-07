@@ -9,7 +9,6 @@ import { useRecoilState } from 'recoil';
 import Alert from '../ui/Alert';
 import Button from '../ui/Buttons/Button';
 import IconButton from '../ui/Buttons/IconButton';
-import LinkButton from '../ui/Buttons/LinkButton';
 import Text from '../ui/Typography/Text';
 
 export default function ConnectWalletDialog() {
@@ -36,7 +35,7 @@ export default function ConnectWalletDialog() {
 
 	return (
 		<div>
-			<Button onClick={() => setIsOpen(true)}>Connect to Wallet</Button>
+			<Button className="w-[155px]" onClick={() => setIsOpen(true)}>Connect to Wallet</Button>
 
 			<Transition appear show={isOpen} as={Fragment}>
 				<Dialog
@@ -176,17 +175,13 @@ export default function ConnectWalletDialog() {
 									<div className="border-b border-slate-100 pt-4 mb-2" />
 
 									<Text size="xs" className="text-slate-400 flex">
-										Don't have a wallet?&nbsp;
-										<LinkButton
-											href="https://chrome.google.com/webstore/category/extensions"
-											color="unstyled"
-											fontSize="xs"
+										Don't see your wallet here?&nbsp;
+										<a
+											href="mailto:contact@example.com"
 											className="text-purple-600 font-semibold hover:text-purple-800 underline"
-											target="_blank"
-											rel="noopener noreferrer"
 										>
-											Download here
-										</LinkButton>
+											Let us know!
+										</a>
 									</Text>
 								</Dialog.Panel>
 							</Transition.Child>
