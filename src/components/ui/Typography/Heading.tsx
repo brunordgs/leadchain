@@ -22,7 +22,7 @@ const sizes = {
 	'5xl': 'text-7xl',
 };
 
-export function Heading({
+export default function Heading({
 	as: Tag = 'h1',
 	size = 'base',
 	weight = 'bold',

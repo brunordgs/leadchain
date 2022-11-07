@@ -29,7 +29,7 @@ export default function Alert({ color = 'primary', children, className, ...props
 			)}
 			{...props}
 		>
-			<Text>{children}</Text>
+			{children}
 		</div>
 	);
 }

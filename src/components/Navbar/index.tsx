@@ -1,11 +1,10 @@
-import Button from '../ui/Buttons/Button';
+import { AiOutlineAreaChart, AiOutlineSwap } from 'react-icons/ai';
+import { HiSquares2X2 } from 'react-icons/hi2';
+import { IoServer } from 'react-icons/io5';
+import ConnectWalletDialog from '../Dialogs/ConnectWalletDialog';
 import LinkButton from '../ui/Buttons/LinkButton';
 import Text from '../ui/Typography/Text';
-import { HiSquares2X2 } from 'react-icons/hi2';
-import { AiOutlineSwap, AiOutlineAreaChart } from 'react-icons/ai';
-import { IoServer } from 'react-icons/io5';
 import MobileNavbar from './MobileNavbar';
-import { ConnectWalletDialog } from '../Dialogs/ConnectWalletDialog';
 
 export default function Navbar() {
 	return (
@@ -63,6 +62,7 @@ export default function Navbar() {
 					<select className="px-4 py-2 transition-all ease-out border rounded-sm shadow-sm font-semibold text-slate-700">
 						<option value="eth">Ethereum</option>
 					</select>
+
 					<ConnectWalletDialog />
 				</div>
 			</header>
