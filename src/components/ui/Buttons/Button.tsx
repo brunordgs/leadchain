@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import { ComponentPropsWithoutRef } from 'react';
+import type { IconType } from 'react-icons';
 
 export interface Props {
 	color?: keyof typeof BUTTON_COLORS;
 	variant?: 'base' | 'outlined';
 	size?: 'small' | 'default' | 'large' | 'custom';
 	fontSize?: 'xs' | 'sm' | 'base' | 'lg';
-	// leftIcon?: IconType | string;
-	// rightIcon?: IconType | string;
+	leftIcon?: IconType | string;
+	rightIcon?: IconType | string;
 }
 
 type ButtonProps = Props & ComponentPropsWithoutRef<'button'>;
@@ -15,17 +16,15 @@ type ButtonProps = Props & ComponentPropsWithoutRef<'button'>;
 export const BUTTON_COLORS = {
 	primary: {
 		base: 'bg-gradient-to-r from-purple-500 to-blue-500 text-slate-100 hover:text-white border border-indigo-500 rounded-sm shadow-md',
-		outlined:
-			'text-purple-500 hover:text-purple-700 border border-purple-500 rounded-sm shadow-sm',
+		outlined: 'text-purple-500 hover:text-purple-700 border border-purple-500 rounded-sm shadow-sm',
 		disabled: {
 			base: 'bg-zinc-400/40 text-zinc-400 border border-transparent cursor-not-allowed rounded-md shadow-md',
 			outlined: '',
 		},
 	},
 	secondary: {
-		base: 'bg-white from-purple-500 to-blue-500 text-slate-100 hover:text-white border border-indigo-500 rounded-sm shadow-md',
-		outlined:
-			'text-slate-700 hover:text-black border border-slate-200 rounded-sm shadow-sm',
+		base: 'text-slate-400 hover:text-slate-600 border border-slate-200 !text-xs rounded-sm shadow-sm',
+		outlined: 'text-slate-700 hover:text-black border border-slate-200 rounded-sm shadow-sm',
 		disabled: {
 			base: 'bg-zinc-400/40 text-zinc-400 border border-transparent cursor-not-allowed rounded-md shadow-md',
 			outlined: '',
@@ -68,8 +67,8 @@ export default function Button({
 	color = 'primary',
 	variant = 'base',
 	size = 'default',
-	// leftIcon: LeftIcon,
-	// rightIcon: RightIcon,
+	leftIcon: LeftIcon,
+	rightIcon: RightIcon,
 	fontSize = 'sm',
 	className,
 	children,
@@ -99,9 +98,9 @@ export default function Button({
 			aria-label={props.title}
 			{...props}
 		>
-			{/* {LeftIcon && <LeftIcon className="mr-2" />} */}
+			{LeftIcon && <LeftIcon className="mr-2" />}
 			{children}
-			{/* {RightIcon && <RightIcon className="ml-2" />} */}
+			{RightIcon && <RightIcon className="ml-2" />}
 		</button>
 	);
 }

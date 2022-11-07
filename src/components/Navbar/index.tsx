@@ -5,6 +5,7 @@ import { HiSquares2X2 } from 'react-icons/hi2';
 import { AiOutlineSwap, AiOutlineAreaChart } from 'react-icons/ai';
 import { IoServer } from 'react-icons/io5';
 import MobileNavbar from './MobileNavbar';
+import { ConnectWalletDialog } from '../Dialogs/ConnectWalletDialog';
 
 export default function Navbar() {
 	return (
@@ -62,7 +63,7 @@ export default function Navbar() {
 					<select className="px-4 py-2 transition-all ease-out border rounded-sm shadow-sm font-semibold text-slate-700">
 						<option value="eth">Ethereum</option>
 					</select>
-					<Button>Connect to wallet</Button>
+					<ConnectWalletDialog />
 				</div>
 			</header>
 
