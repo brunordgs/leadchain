@@ -5,7 +5,7 @@ import IconButton from '../ui/Buttons/IconButton';
 
 export default function MobileNavbar() {
 	return (
-		<header className="px-4 lg:px-12 py-5 sticky top-0 border-b bg-white xl:hidden flex items-center justify-between">
+		<header className="px-4 lg:px-12 py-5 sticky top-0 border-b bg-white xl:hidden flex items-center justify-between z-10">
 			<div>
 				<IconButton icon={HiOutlineMenuAlt2} size={20} />
 			</div>

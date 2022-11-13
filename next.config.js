@@ -1,11 +1,9 @@
+/* eslint-disable no-undef */
+/** @type {import('next').NextConfig} */
 module.exports = {
-	experimental: { images: { layoutRaw: true } },
-	webpack: (config) => {
-		config.experiments = { asyncWebAssembly: true };
-		config.resolve.fallback = {
-			...config.resolve.fallback,
-			fs: false,
-		};
-		return config;
+	reactStrictMode: true,
+	swcMinify: true,
+	images: {
+		domains: ['cdn4.iconfinder.com', 'v2.cimg.co'],
 	},
 };

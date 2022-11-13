@@ -1,6 +1,7 @@
 import CollectionTable from '@/components/CollectionTable';
 import Button from '@/components/ui/Buttons/Button';
 import LinkButton from '@/components/ui/Buttons/LinkButton';
+import Container from '@/components/ui/Container';
 import Text from '@/components/ui/Typography/Text';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -14,8 +15,8 @@ export default function Home() {
 				<title>LeadChain</title>
 			</Head>
 
-			<main className="grid grid-cols-1 xl:grid-cols-8 p-6 gap-y-[1px] xl:gap-x-[1px]">
-				<section className="col-span-6 bg-white p-10 rounded-sm shadow-sm">
+			<Container className="grid grid-cols-1 xl:grid-cols-8 gap-y-[1px] xl:gap-x-[1px]">
+				<section className="col-span-6 bg-white p-6 md:p-10 rounded-sm shadow-sm">
 					<header className="flex flex-col md:flex-row gap-4 items-start justify-between">
 						<div>
 							<Text size="3xl" weight="bold">
@@ -132,7 +133,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="row-start-1 xl:row-start-auto col-span-2 bg-white p-10 rounded-sm shadow-sm">
+				<section className="row-start-1 xl:row-start-auto col-span-2 bg-white p-6 md:p-10 rounded-sm shadow-sm">
 					<header className="flex items-center justify-between">
 						<Text size="lg" weight="bold">
 							Learn
@@ -146,14 +147,12 @@ export default function Home() {
 						</LinkButton>
 					</header>
 
-					<div className="mt-8 xl:space-y-4 flex-col md:flex-row flex xl:flex-col justify-evenly gap-4 xl:gap-0">
+					<div className="mt-8 xl:space-y-4 flex xl:flex-col xl:justify-evenly gap-4 xl:gap-0 overflow-x-auto">
 						{Array.from({ length: 4 }, (_, index) => (
 							<Link
 								key={index}
 								href="/"
-								target="_blank"
-								rel="noreferrer noopener"
-								className="bg-slate-50 p-4 hidden md:first:flex xl:flex gap-4 max-w-sm text-slate-700 [&:nth-child(2)]:flex"
+								className="bg-slate-50 p-4 flex gap-4 max-w-sm text-slate-700"
 							>
 								<div className="relative h-24 w-44">
 									<Image
@@ -180,7 +179,7 @@ export default function Home() {
 						))}
 					</div>
 				</section>
-			</main>
+			</Container>
 		</>
 	);
 }
