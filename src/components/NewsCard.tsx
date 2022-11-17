@@ -10,7 +10,7 @@ export default function NewsCard() {
 	return (
 		<Link
 			href="/"
-			className="rounded-sm overflow-hidden border border-slate-200 shadow-md hover:opacity-90 transition-opacity ease-out"
+			className="rounded-sm overflow-hidden border border-slate-200 hover:opacity-90 transition-opacity ease-out"
 			passHref
 		>
 			<img

@@ -154,7 +154,7 @@ export default function Home() {
 								href="/"
 								className="bg-slate-50 p-4 flex gap-4 max-w-sm text-slate-700"
 							>
-								<div className="relative h-24 w-44">
+								<div className="relative h-24 w-44 min-w-[6rem]">
 									<Image
 										src="https://v2.cimg.co/news/92702/232012/responsive-images/adobestock-484838882-editorial-use-only___media_library_original_6240_4160.jpeg"
 										fill
